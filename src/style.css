@@ -3,7 +3,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 100svh;
 }
 
 .text-container {
@@ -43,7 +43,7 @@ body {
 
 .container {
   width: 100vw;
-  height: 100vh;
+  height: 100svh;
   position: relative;
   overflow: hidden;
   background: linear-gradient(45deg, #d8e8fb 0%, #daeafc 10%, #d1d6fc 28%, #cdd0fa 31%, #c4c0fa 45%, #c2bdfa 52%, #c4bffa 59%, #d1d3fb 77%, #d1d4f9 80%, #d3d5fb 80%, #d2d6f9 82%, #d4d6fb 82%, #d2d7fa 83%, #d8ddfb 91%, #d7defa 100%)

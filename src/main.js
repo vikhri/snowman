@@ -175,21 +175,33 @@ container.addEventListener('mousemove', (event) => {
 });
 
 
+container.addEventListener('touchstart', (event) => {
+    event.preventDefault();
+    createSnowflake(event);
+});
+
 container.addEventListener('touchmove', (event) => {
     event.preventDefault();
+    createSnowflake(event);
+});
 
+function createSnowflake(event) {
     const touch = event.touches[0];
     const rect = container.getBoundingClientRect();
     const x = touch.clientX - rect.left;
     const y = touch.clientY - rect.top;
 
-    const newCircle = Bodies.circle(event.offsetX, event.offsetY, 30, {
-      render: {
-          fillStyle: 'blue'
-      }
-  });
-  Composite.add(engine.world, newCircle);
-});
+    const newCircle = Bodies.circle(x, y, 10, {
+        render: {
+            sprite: {
+                texture: 'flake.svg',
+                xScale: 0.15,
+                yScale: 0.15 
+            }
+        }
+    });
+    Composite.add(engine.world, newCircle);
+}
 
 
 Render.run(render);
@@ -235,5 +247,3 @@ function updateCountdown() {
 
 setInterval(updateCountdown, 1000);
 updateCountdown(); 
-
-
