@@ -6,11 +6,48 @@ body {
   min-height: 100vh;
 }
 
+.text-container {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  row-gap: 10px;
+  font-family: 'Outfit', sans-serif;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+
+  h1 {
+    font-size: 1.2rem;
+    text-align: center;
+    color: #9A6AFF;
+  }
+}
+
+@media (max-width: 768px) {
+  .text-container {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  h1 {
+    font-size: 1rem;
+    text-align: center;
+    color: #9A6AFF;
+  }
+}
+
+
 .container {
   width: 100vw;
   height: 100vh;
   position: relative;
   overflow: hidden;
+  background: linear-gradient(45deg, #d8e8fb 0%, #daeafc 10%, #d1d6fc 28%, #cdd0fa 31%, #c4c0fa 45%, #c2bdfa 52%, #c4bffa 59%, #d1d3fb 77%, #d1d4f9 80%, #d3d5fb 80%, #d2d6f9 82%, #d4d6fb 82%, #d2d7fa 83%, #d8ddfb 91%, #d7defa 100%)
+
 }
 
 canvas {
@@ -18,4 +55,30 @@ canvas {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+
+.countdown {
+  display: flex;
+  gap: 20px;
+  padding: 15px 0;
+  font-family: 'Outfit', sans-serif; 
+}
+
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 60px;
+}
+
+.countdown-item span {
+  color: #9A6AFF;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.countdown-item .label {
+  font-size: 14px;
+  opacity: 0.8;
 }
